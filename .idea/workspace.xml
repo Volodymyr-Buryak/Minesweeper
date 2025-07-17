@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="The initial window of the program was made and the method of adding an image was configured" />
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Checked for the presence of the file in the resources.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +52,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propCompiler",
+    "settings.editor.selected.configurable": "editor.preferences.import",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,7 +84,9 @@
       <option name="presentableId" value="Default" />
       <updated>1752673745372</updated>
       <workItem from="1752673747261" duration="14723000" />
-      <workItem from="1752696434215" duration="780000" />
+      <workItem from="1752696434215" duration="1109000" />
+      <workItem from="1752741787782" duration="1660000" />
+      <workItem from="1752764729825" duration="6227000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -131,7 +136,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752697140810</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="The initial window of the program was made and the method of adding an image was configured">
+      <option name="closed" value="true" />
+      <created>1752697372557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752697372557</updated>
+    </task>
+    <task id="LOCAL-00008" summary="The initial window of the program was made and the method of adding an image was configured">
+      <option name="closed" value="true" />
+      <created>1752697444370</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752697444370</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +182,11 @@
     <MESSAGE value="Commit Demo4" />
     <MESSAGE value="Commit Demo5" />
     <MESSAGE value="The initial window of the program was made and the method of adding an image was configured" />
-    <option name="LAST_COMMIT_MESSAGE" value="The initial window of the program was made and the method of adding an image was configured" />
+    <MESSAGE value="Checked for the presence of the file in the resources." />
+    <option name="LAST_COMMIT_MESSAGE" value="Checked for the presence of the file in the resources." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
