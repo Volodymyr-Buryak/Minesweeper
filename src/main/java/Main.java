@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.sweeper.GameUI;
+
 import javax.swing.SwingUtilities;
 
 public class Main {

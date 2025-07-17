@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Checked for the presence of the file in the resources.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sweeper/Box.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/flaged.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/flagged.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
       <list>
         <option value="package-info" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -26,6 +30,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Temp/2d477977-9f3a-4699-b7d7-05cfb7f4e08b_components-BorderDemoProject (1).zip.08b/components-BorderDemoProject/src/components/BorderDemo.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -86,7 +93,7 @@
       <workItem from="1752673747261" duration="14723000" />
       <workItem from="1752696434215" duration="1109000" />
       <workItem from="1752741787782" duration="1660000" />
-      <workItem from="1752764729825" duration="6227000" />
+      <workItem from="1752764729825" duration="13527000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -152,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752697444370</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Checked for the presence of the file in the resources.">
+      <option name="closed" value="true" />
+      <created>1752771072887</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752771072888</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
