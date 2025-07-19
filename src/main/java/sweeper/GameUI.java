@@ -18,12 +18,14 @@ public class GameUI extends JFrame {
     private JPanel panel;
     private JLabel label;
 
-    private static final int ROWS = 1;
-    private static final int COLUMNS = 15;
+    private static final int ROWS = 9;
+    private static final int COLUMNS = 9;
     private static final int IMAGE_SIZE = 50;
     private static final int MINE_COUNT = 0;
 
     public GameUI() {
+        // Встановлюємо розміри сітки гри
+        Ranges.setSize(COLUMNS, ROWS);
         initializeImageBox();
         initializeJPanel();
         initializeJFrame();
@@ -32,8 +34,9 @@ public class GameUI extends JFrame {
     private void initializeImageBox(){
         try {
             for (Box box : Box.values()){
-                box.setImage(loadImageFromResources(box.name().toLowerCase()));
+                box.setImage(loadImageFromResources(box.name()));
             }
+            setIconImage(loadImageFromResources("icon"));
         } catch (FileNotFoundException e){
             showErrorAndExit(e.getMessage());
         }
@@ -59,12 +62,16 @@ public class GameUI extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                for (Box box :  Box.values()){
-                    g.drawImage((Image) box.getImage(), box.ordinal() * IMAGE_SIZE,1, this);
+                for (Coordinate coordinate : Ranges.getAllCoordinates()){
+                    g.drawImage((Image) Box.BOMB.getImage(),
+                            coordinate.getX() * IMAGE_SIZE,
+                            coordinate.getY() * IMAGE_SIZE, this);
                 }
             }
         };
-        panel.setPreferredSize(new Dimension(COLUMNS * IMAGE_SIZE, ROWS * IMAGE_SIZE));
+        panel.setPreferredSize(new Dimension(
+                Ranges.getSize().getX() * IMAGE_SIZE,
+                Ranges.getSize().getY() * IMAGE_SIZE));
         add(panel);
     }
 
