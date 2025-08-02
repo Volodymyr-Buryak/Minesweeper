@@ -24,4 +24,12 @@ public class Coordinate{
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Coordinate)){
+            return super.equals(obj);
+        }
+        return ((Coordinate) obj).x == x &&  ((Coordinate) obj).y == y;
+    }
 }

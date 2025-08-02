@@ -15,18 +15,19 @@ import java.net.URL;
 
 public class GameUI extends JFrame {
 
+    private final Game game;
     private JPanel panel;
     private JLabel label;
 
     private static final int ROWS = 9;
     private static final int COLUMNS = 9;
     private static final int IMAGE_SIZE = 50;
-    private static final int MINE_COUNT = 0;
+    private static final int MINE_COUNT = 10;
 
     public GameUI() {
-        // Встановлюємо розміри сітки гри
-        Ranges.setSize(COLUMNS, ROWS);
         initializeImageBox();
+        game = new Game(COLUMNS, ROWS, MINE_COUNT);
+        game.start();
         initializeJPanel();
         initializeJFrame();
     }
@@ -47,7 +48,6 @@ public class GameUI extends JFrame {
         if (imgURL == null){
             throw new FileNotFoundException("Image not found: " + iconName);
         }
-
         return new ImageIcon(imgURL).getImage();
     }
 
@@ -55,7 +55,7 @@ public class GameUI extends JFrame {
         JOptionPane.showMessageDialog(this, message, "Error loading resource", JOptionPane.ERROR_MESSAGE);
         System.exit(1);
     }
-
+    
     private void initializeJPanel(){
         // Panel використовується для розміщення елементів інтерфейсу у вікні JFrame.
         panel = new JPanel(){
@@ -63,7 +63,7 @@ public class GameUI extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 for (Coordinate coordinate : Ranges.getAllCoordinates()){
-                    g.drawImage((Image) Box.BOMB.getImage(),
+                    g.drawImage((Image) game.getBox(coordinate).getImage(),
                             coordinate.getX() * IMAGE_SIZE,
                             coordinate.getY() * IMAGE_SIZE, this);
                 }
