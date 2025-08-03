@@ -1,6 +1,6 @@
 package main.java.sweeper;
 
-public class Coordinate{
+public final class Coordinate {
     private int x;
     private int y;
 

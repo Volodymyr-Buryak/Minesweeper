@@ -15,4 +15,10 @@ public enum Box {
     public void setImage(Object image) {
         this.image = image;
     }
+
+    public Box next() {
+        Box[] values  = Box.values();
+        int nextOrdinal = (this.ordinal() + 1) % values.length;
+        return values[nextOrdinal];
+    }
 }

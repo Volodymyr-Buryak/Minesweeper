@@ -6,7 +6,7 @@ import java.util.Random;
 public final class Ranges {
     private static Coordinate size; // Розміри сітки гри
     private static final Random random = new Random();
-    private static final ArrayList<Coordinate> allCoordinates = new ArrayList<Coordinate>();
+    private static final ArrayList<Coordinate> allCoordinates = new ArrayList<>();
 
     public static void setSize(Coordinate size) {
         Ranges.size = size;

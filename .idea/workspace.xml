@@ -9,13 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="The Coordinates class and the Ranges class were created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sweeper/Bomb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sweeper/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sweeper/Matrix.java" afterDir="false" />
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="A mechanism for adding bombs was added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sweeper/Flag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Box.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Matrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Ranges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sweeper/Ranges.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.base/java/io/PrintStream.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
@@ -121,6 +124,8 @@
       <workItem from="1753558406492" duration="1378000" />
       <workItem from="1753636668111" duration="10000" />
       <workItem from="1753807179060" duration="1214000" />
+      <workItem from="1754161725450" duration="2310000" />
+      <workItem from="1754226337813" duration="5256000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -210,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752940876273</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="A mechanism for adding bombs was added">
+      <option name="closed" value="true" />
+      <created>1754161860367</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754161860367</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +256,8 @@
     <MESSAGE value="Checked for the presence of the file in the resources." />
     <MESSAGE value="Enumerations for displaying images have been created" />
     <MESSAGE value="The Coordinates class and the Ranges class were created" />
-    <option name="LAST_COMMIT_MESSAGE" value="The Coordinates class and the Ranges class were created" />
+    <MESSAGE value="A mechanism for adding bombs was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="A mechanism for adding bombs was added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

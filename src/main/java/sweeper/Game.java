@@ -1,16 +1,19 @@
 package main.java.sweeper;
 
-public class Game {
+public final class Game {
     private final Bomb bomb;
+    private final Flag flag;
 
-    public Game (int columns, int rows, int totalbomb) {
+    public Game (int columns, int rows, int totalBombs) {
         // Встановлюємо розміри сітки гри
         Ranges.setSize(new Coordinate(columns, rows));
-        bomb = new Bomb(totalbomb);
+        bomb = new Bomb(totalBombs );
+        flag = new Flag();
     }
 
     public void start() {
        bomb.start();
+       flag.start();
     }
 
     public Box getBox (Coordinate coordinate) {

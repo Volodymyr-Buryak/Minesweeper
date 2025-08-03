@@ -22,11 +22,11 @@ public class GameUI extends JFrame {
     private static final int ROWS = 9;
     private static final int COLUMNS = 9;
     private static final int IMAGE_SIZE = 50;
-    private static final int MINE_COUNT = 10;
+    private static final int BOMB_COUNT = 10;
 
     public GameUI() {
         initializeImageBox();
-        game = new Game(COLUMNS, ROWS, MINE_COUNT);
+        game = new Game(COLUMNS, ROWS, BOMB_COUNT);
         game.start();
         initializeJPanel();
         initializeJFrame();
