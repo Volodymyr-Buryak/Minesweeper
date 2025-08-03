@@ -7,7 +7,7 @@ public final class Game {
     public Game (int columns, int rows, int totalBombs) {
         // Встановлюємо розміри сітки гри
         Ranges.setSize(new Coordinate(columns, rows));
-        bomb = new Bomb(totalBombs );
+        bomb = new Bomb(totalBombs);
         flag = new Flag();
     }
 
@@ -17,6 +17,18 @@ public final class Game {
     }
 
     public Box getBox (Coordinate coordinate) {
-        return bomb.get(coordinate);
+        Box box = flag.get(coordinate);
+        if (Box.OPENED == box){
+            return bomb.get(coordinate);
+        }
+        return box;
+    }
+
+    public void pressLeftButton (Coordinate coordinate) {
+        flag.setOpendToBox(coordinate);
+    }
+
+    public void pressRightButton (Coordinate coordinate) {
+        flag.toggleFlaggedToBox(coordinate);
     }
 }

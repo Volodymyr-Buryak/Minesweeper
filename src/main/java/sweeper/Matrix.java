@@ -17,6 +17,7 @@ public class Matrix {
 
     public void set(Coordinate coordinate, Box box){
         matrix[coordinate.getX()][coordinate.getY()] = box;
+        printInfo();
     }
 
     public void printInfo(){
@@ -26,5 +27,6 @@ public class Matrix {
             }
             System.out.println();
         }
+        System.out.println('\n');
     }
 }

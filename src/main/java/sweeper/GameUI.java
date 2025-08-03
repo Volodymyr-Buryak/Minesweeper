@@ -5,13 +5,21 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Dimension;
+import java.awt.BorderLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 
-import java.io.FileNotFoundException;
 import java.net.URL;
+import java.io.FileNotFoundException;
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class GameUI extends JFrame {
 
@@ -29,6 +37,7 @@ public class GameUI extends JFrame {
         game = new Game(COLUMNS, ROWS, BOMB_COUNT);
         game.start();
         initializeJPanel();
+        initializeJLabel();
         initializeJFrame();
     }
 
@@ -61,6 +70,7 @@ public class GameUI extends JFrame {
         panel = new JPanel(){
             @Override
             protected void paintComponent(Graphics g) {
+                System.out.println("paintComponent вызван: " +  new SimpleDateFormat("HH:mm:ss").format(new Date()));
                 super.paintComponent(g);
                 for (Coordinate coordinate : Ranges.getAllCoordinates()){
                     g.drawImage((Image) game.getBox(coordinate).getImage(),
@@ -69,13 +79,38 @@ public class GameUI extends JFrame {
                 }
             }
         };
+
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                int positionX = e.getX() / IMAGE_SIZE, positionY = e.getY() / IMAGE_SIZE;
+                Coordinate coordinate = new Coordinate(positionX, positionY);
+                switch (e.getButton()){
+                    case MouseEvent.BUTTON1 -> game.pressLeftButton(coordinate);
+                    case MouseEvent.BUTTON3 -> game.pressRightButton(coordinate);
+                    case MouseEvent.BUTTON2 -> game.start();
+                    default -> System.out.println("Unknown mouse button pressed: " + e.getButton());
+                }
+                panel.repaint();
+            }
+        });
+
         panel.setPreferredSize(new Dimension(
                 Ranges.getSize().getX() * IMAGE_SIZE,
                 Ranges.getSize().getY() * IMAGE_SIZE));
+
         add(panel);
     }
 
-    private  void initializeJFrame() {
+    private void initializeJLabel () {
+        label = new JLabel("Welcome!");
+        label.setFont(new Font("Tahoma", Font.BOLD, 20));
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
+        add(label, BorderLayout.NORTH);
+    }
+
+    private void initializeJFrame() {
         setTitle("Minesweeper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();

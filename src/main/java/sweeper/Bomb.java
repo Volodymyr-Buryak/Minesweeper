@@ -18,7 +18,6 @@ public class Bomb {
         for (int i = 0; i < totalBombs; i++) {
             generateBombs();
         }
-        bombMap.printInfo();
     }
 
     public Box get(Coordinate coordinate) {
