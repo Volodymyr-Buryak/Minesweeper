@@ -2,11 +2,11 @@ package sweeper.util.game;
 
 import sweeper.Coordinate;
 
-import java.util.ArrayList;
 import java.util.Random;
+import java.util.ArrayList;
 
 public final class Ranges {
-    private static Coordinate size; // Розміри сітки гри
+    private static Coordinate size;
     private static final Random random = new Random();
     private static final ArrayList<Coordinate> allCoordinates = new ArrayList<>();
 
@@ -48,7 +48,6 @@ public final class Ranges {
                 }
             }
         }
-
         return list;
     }
 }

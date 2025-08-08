@@ -20,6 +20,10 @@ public final class Bomb {
         return bombMap.get(coordinate);
     }
 
+    public int getTotalBombs() {
+        return totalBombs;
+    }
+
     public void start() {
         bombMap = new Matrix(Box.ZERO);
         for (int i = 0; i < totalBombs; i++) {
@@ -42,5 +46,9 @@ public final class Bomb {
                 bombMap.set(around, bombMap.get(around).next());
             }
         }
+    }
+
+    public void setCellExplodedBomb(Coordinate bombedCoordinate) {
+        bombMap.set(bombedCoordinate, Box.BOMBED);
     }
 }

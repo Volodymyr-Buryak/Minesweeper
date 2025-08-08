@@ -1,8 +1,8 @@
 package sweeper;
 
 import sweeper.EnumGame.Box;
-import sweeper.EnumGame.GameState;
 import sweeper.util.game.Ranges;
+import sweeper.EnumGame.GameState;
 
 public final class Game {
     private final Bomb bomb;
@@ -14,10 +14,6 @@ public final class Game {
         Ranges.setSize(new Coordinate(columns, rows));
         bomb = new Bomb(totalBombs);
         flag = new Flag();
-    }
-
-    public GameState getGameState() {
-        return gameState;
     }
 
     public void start() {
@@ -35,7 +31,16 @@ public final class Game {
     }
 
     public void pressLeftButton (Coordinate coordinate) {
-        openCells(coordinate);
+        if (isGamePlaying()) {
+            openCells(coordinate);
+            checkWinner();
+        }
+    }
+
+    public void pressRightButton (Coordinate coordinate) {
+        if (isGamePlaying()){
+            flag.toggleFlaggedToBox(coordinate);
+        }
     }
 
     private void openCells (Coordinate coordinate) {
@@ -45,7 +50,11 @@ public final class Game {
             case CLOSED -> {
                 switch (bomb.get(coordinate)){
                     case ZERO -> openCellsAroundZero(coordinate);
-                    case BOMB -> flag.setOpendToCells(coordinate);
+                    case BOMB ->  {
+                        gameState = GameState.BOMBED;
+                        flag.setOpendToCells(coordinate);
+                        bomb.setCellExplodedBomb(coordinate);
+                    }
                     default -> flag.setOpendToCells(coordinate);
                 }
             }
@@ -60,8 +69,29 @@ public final class Game {
         }
     }
 
-    public void pressRightButton (Coordinate coordinate) {
-        flag.toggleFlaggedToBox(coordinate);
+    private void checkWinner() {
+        if (GameState.PLAYING == gameState && flag.getTotalClosed() == bomb.getTotalBombs()){
+            gameState = GameState.WINNER;
+            flag.setLastedBombs();
+        }
     }
 
+    private boolean isGamePlaying() {
+        return gameState == GameState.PLAYING;
+    }
+
+    public String getMassage() {
+        System.out.println("Game state: " + gameState);
+        return switch (gameState) {
+            case BOMBED -> "You lost!";
+            case WINNER -> "You won!";
+            case PLAYING -> {
+                if (flag.getTotalFlagged() == 0){
+                    yield "Click to start";
+                } else {
+                    yield "Flagged: " + flag.getTotalFlagged() + " of " + bomb.getTotalBombs();
+                }
+            }
+        };
+    }
 }

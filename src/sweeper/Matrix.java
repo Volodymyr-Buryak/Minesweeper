@@ -7,7 +7,6 @@ public final class Matrix {
     private final Box[][] matrix;
 
     public Matrix(Box box){
-        // Ініціалізуємо матрицю розмірами, які задані в класі Ranges
         matrix = new Box[Ranges.getSize().getX()][Ranges.getSize().getY()];
         for (Coordinate allCoordinates : Ranges.getAllCoordinates()){
             matrix[allCoordinates.getX()][allCoordinates.getY()] = box;

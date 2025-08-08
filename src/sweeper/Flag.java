@@ -1,27 +1,52 @@
 package sweeper;
 
 import sweeper.EnumGame.Box;
+import sweeper.util.game.Ranges;
 
 public final class Flag {
     private Matrix flagMap;
+    private int totalFlagged;
+    private int totalClosed;
+
+    public void start() {
+        flagMap = new Matrix(Box.CLOSED);
+        totalFlagged = 0;
+        totalClosed = Ranges.getSize().getX() * Ranges.getSize().getY();
+    }
 
     public Box get(Coordinate coordinate){
         return flagMap.get(coordinate);
     }
-    public void start() {
-        flagMap = new Matrix(Box.CLOSED);
+
+    public int getTotalFlagged() {
+        return totalFlagged;
+    }
+
+    public int getTotalClosed() {
+        return totalClosed;
     }
 
     public void setOpendToCells(Coordinate coordinate) {
         flagMap.set(coordinate, Box.OPENED);
+        totalClosed--;
     }
 
     private void setFlaggedToCells(Coordinate coordinate) {
         flagMap.set(coordinate, Box.FLAGGED);
+        totalFlagged++;
     }
 
     private void setClosedToCells(Coordinate coordinate) {
         flagMap.set(coordinate, Box.CLOSED);
+        totalFlagged--;
+    }
+
+    public void setLastedBombs() {
+        for (Coordinate coordinate : Ranges.getAllCoordinates()) {
+            if (Box.CLOSED == flagMap.get(coordinate)) {
+                setFlaggedToCells(coordinate);
+            }
+        }
     }
 
     public void toggleFlaggedToBox (Coordinate coordinate) {

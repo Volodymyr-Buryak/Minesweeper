@@ -9,19 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Changing the texture">
-      <change afterPath="$PROJECT_DIR$/src/sweeper/EnumGame/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sweeper/Mouse.java" afterDir="false" />
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Algorithm for opening empty cells and list of game states">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Bomb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Box.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Coordinate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Flag.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/GameUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Matrix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sweeper/Ranges.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/bombed.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/bombed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Flag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +57,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.import",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vovan/Desktop/Minesweeper&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vovan\Desktop\Minesweeper\resources" />
@@ -137,7 +137,11 @@
       <workItem from="1754300691745" duration="227000" />
       <workItem from="1754319877551" duration="7000" />
       <workItem from="1754320309509" duration="2828000" />
-      <workItem from="1754323427384" duration="9356000" />
+      <workItem from="1754323427384" duration="9721000" />
+      <workItem from="1754494532848" duration="146000" />
+      <workItem from="1754587431933" duration="4648000" />
+      <workItem from="1754592216470" duration="4200000" />
+      <workItem from="1754680641013" duration="4853000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -259,7 +263,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754262769853</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Algorithm for opening empty cells and list of game states">
+      <option name="closed" value="true" />
+      <created>1754337425887</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1754337425887</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Algorithm for opening empty cells and list of game states">
+      <option name="closed" value="true" />
+      <created>1754337541093</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754337541093</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +316,18 @@
     <MESSAGE value="A bomb check was created and a class flag was implemented" />
     <MESSAGE value="Created mouse button event" />
     <MESSAGE value="Changing the texture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing the texture" />
+    <MESSAGE value="Algorithm for opening empty cells and list of game states" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algorithm for opening empty cells and list of game states" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

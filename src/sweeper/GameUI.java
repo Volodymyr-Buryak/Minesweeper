@@ -30,14 +30,14 @@ public final class GameUI extends JFrame {
     private static final int ROWS = 9;
     private static final int COLUMNS = 9;
     private static final int IMAGE_SIZE = 50;
-    private static final int BOMB_COUNT = 9;
+    private static final int BOMB_COUNT = 4;
 
     public GameUI() {
         initializeImageBox();
         game = new Game(COLUMNS, ROWS, BOMB_COUNT);
         game.start();
-        initializeJPanel();
         initializeJLabel();
+        initializeJPanel();
         initializeJFrame();
     }
 
@@ -80,8 +80,7 @@ public final class GameUI extends JFrame {
             }
         };
 
-        panel.addMouseListener(new Mouse(game, panel, IMAGE_SIZE));
-
+        panel.addMouseListener(new Mouse(game, panel, label, IMAGE_SIZE));
         panel.setPreferredSize(new Dimension(
                 Ranges.getSize().getX() * IMAGE_SIZE,
                 Ranges.getSize().getY() * IMAGE_SIZE));
@@ -90,11 +89,12 @@ public final class GameUI extends JFrame {
     }
 
     private void initializeJLabel () {
-        label = new JLabel(getMassage());
+        label = new JLabel(game.getMassage());
         label.setFont(new Font("Tahoma", Font.BOLD, 20));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         label.setVerticalAlignment(SwingConstants.CENTER);
         add(label, BorderLayout.NORTH);
+        System.out.println("JLabel initialized: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
     }
 
     private void initializeJFrame() {
@@ -104,13 +104,5 @@ public final class GameUI extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-    }
-
-    private String getMassage() {
-        return switch (game.getGameState()){
-            case PLAYING -> "Game in progress";
-            case BOMBED -> "You lost!";
-            case WINNER -> "You won!";
-        };
     }
 }
