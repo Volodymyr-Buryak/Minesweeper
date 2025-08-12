@@ -10,7 +10,6 @@ public final class Game {
     private GameState gameState;
 
     public Game (int columns, int rows, int totalBombs) {
-        // Встановлюємо розміри сітки гри
         Ranges.setSize(new Coordinate(columns, rows));
         bomb = new Bomb(totalBombs);
         flag = new Flag();
@@ -43,6 +42,10 @@ public final class Game {
         }
     }
 
+    private boolean isGamePlaying() {
+        return gameState == GameState.PLAYING;
+    }
+
     private void openCells (Coordinate coordinate) {
         switch (flag.get(coordinate)){
             case OPENED -> {}
@@ -50,20 +53,33 @@ public final class Game {
             case CLOSED -> {
                 switch (bomb.get(coordinate)){
                     case ZERO -> openCellsAroundZero(coordinate);
-                    case BOMB ->  {
-                        gameState = GameState.BOMBED;
-                        flag.setOpendToCells(coordinate);
-                        bomb.setCellExplodedBomb(coordinate);
-                    }
+                    case BOMB -> processBombHit(coordinate);
                     default -> flag.setOpendToCells(coordinate);
                 }
             }
         }
     }
 
+    private void processBombHit(Coordinate coordinate) {
+        gameState = GameState.BOMBED;
+        flag.setOpendToCells(coordinate);
+        bomb.setCellExplodedBomb(coordinate);
+        displayBombs();
+    }
+
+    private void displayBombs() {
+        for (Coordinate coordinate : Ranges.getAllCoordinates()){
+            if (Box.BOMB == bomb.get(coordinate) && Box.CLOSED == flag.get(coordinate)) {
+                flag.setOpendToCells(coordinate);
+                flag.setTotalClosed(flag.getTotalClosed() + 1);
+            } else {
+                flag.setCellMisflagged(coordinate);
+            }
+        }
+    }
+
     private void openCellsAroundZero(Coordinate coordinate) {
         flag.setOpendToCells(coordinate);
-        System.out.println(coordinate);
         for (Coordinate around: Ranges.getCoordinatesAround(coordinate)){
             openCells(around);
         }
@@ -74,10 +90,6 @@ public final class Game {
             gameState = GameState.WINNER;
             flag.setLastedBombs();
         }
-    }
-
-    private boolean isGamePlaying() {
-        return gameState == GameState.PLAYING;
     }
 
     public String getMassage() {

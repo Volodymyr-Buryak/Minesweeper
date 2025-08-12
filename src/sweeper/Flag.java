@@ -26,6 +26,16 @@ public final class Flag {
         return totalClosed;
     }
 
+    public void setTotalClosed(int totalClosed) {
+        this.totalClosed = totalClosed;
+    }
+
+    public void setCellMisflagged(Coordinate coordinate){
+        if (Box.FLAGGED == flagMap.get(coordinate)){
+            flagMap.set(coordinate,Box.NOBOMB);
+        }
+    }
+
     public void setOpendToCells(Coordinate coordinate) {
         flagMap.set(coordinate, Box.OPENED);
         totalClosed--;
