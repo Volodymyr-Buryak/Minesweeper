@@ -30,7 +30,7 @@ public final class GameUI extends JFrame {
     private static final int ROWS = 9;
     private static final int COLUMNS = 9;
     private static final int IMAGE_SIZE = 50;
-    private static final int BOMB_COUNT = 4;
+    private static final int BOMB_COUNT = 8;
 
     public GameUI() {
         initializeImageBox();

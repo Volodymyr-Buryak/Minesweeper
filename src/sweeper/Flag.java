@@ -66,4 +66,14 @@ public final class Flag {
             default -> System.out.println("You can not toggle flag on this box: " + coordinate);
         }
     }
+
+    public int getFlagCountAround(Coordinate coordinate) {
+        int count = 0;
+        for (Coordinate around : Ranges.getCoordinatesAround(coordinate)){
+            if (flagMap.get(around) == Box.FLAGGED){
+                count++;
+            }
+        }
+        return count;
+    }
 }

@@ -7,6 +7,7 @@ public enum Box {
     OPENED, CLOSED, FLAGGED, BOMBED, NOBOMB;
 
     private Object image;
+
     public Object getImage() {
         return image;
     }
@@ -20,4 +21,15 @@ public enum Box {
         int nextOrdinal = (this.ordinal() + 1) % values.length;
         return values[nextOrdinal];
     }
+
+    public int getNumberBox(){
+        int index = this.ordinal();
+        if (index == Box.ZERO.ordinal() || index > Box.NUM8.ordinal()){
+            return -1;
+        }
+        return index;
+    }
 }
+
+
+

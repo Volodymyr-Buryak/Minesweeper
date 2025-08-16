@@ -48,13 +48,24 @@ public final class Game {
 
     private void openCells (Coordinate coordinate) {
         switch (flag.get(coordinate)){
-            case OPENED -> {}
+            case OPENED -> openAdjacentCells(coordinate);
             case FLAGGED -> {}
             case CLOSED -> {
                 switch (bomb.get(coordinate)){
                     case ZERO -> openCellsAroundZero(coordinate);
                     case BOMB -> processBombHit(coordinate);
                     default -> flag.setOpendToCells(coordinate);
+                }
+            }
+        }
+    }
+
+    private void openAdjacentCells(Coordinate coordinate) {
+        int numberBox = bomb.get(coordinate).getNumberBox();
+        if (numberBox != -1 && numberBox== flag.getFlagCountAround(coordinate)){
+            for (Coordinate around: Ranges.getCoordinatesAround(coordinate)){
+                if (Box.CLOSED == flag.get(around)){
+                    openCells(around);
                 }
             }
         }
