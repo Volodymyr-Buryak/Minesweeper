@@ -1,9 +1,7 @@
 <p align="center">
-  <img width="90" height="100" alt="Minesweeper Logo" src="https://github.com/user-attachments/assets/3a3f731a-c2de-4bb9-9309-1bcddef60873" />
+  <img width="115" height="110" alt="Minesweeper Logo" src="https://github.com/user-attachments/assets/3a3f731a-c2de-4bb9-9309-1bcddef60873" />
 </p>
-<h3 align="center">‎‎‎ Minesweeper</h3>
-
-
+<h3 align="center">‎‎ㅤ‎‎‎Minesweeper</h3>
 
 ## Description
 
