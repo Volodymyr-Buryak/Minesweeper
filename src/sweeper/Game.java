@@ -1,8 +1,12 @@
 package sweeper;
 
-import sweeper.EnumGame.Box;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+
+import java.awt.Dimension;
+
+import sweeper.EnumGame.*;
 import sweeper.util.game.Ranges;
-import sweeper.EnumGame.GameState;
 
 public final class Game {
     private final Bomb bomb;
@@ -11,8 +15,8 @@ public final class Game {
 
     public Game (int columns, int rows, int totalBombs) {
         Ranges.setSize(new Coordinate(columns, rows));
-        bomb = new Bomb(totalBombs);
         flag = new Flag();
+        bomb = new Bomb(totalBombs);
     }
 
     public void start() {
@@ -31,14 +35,21 @@ public final class Game {
 
     public void pressLeftButton (Coordinate coordinate) {
         if (isGamePlaying()) {
-            openCells(coordinate);
+            openBox(coordinate);
             checkWinner();
         }
     }
 
     public void pressRightButton (Coordinate coordinate) {
         if (isGamePlaying()){
-            flag.toggleFlaggedToBox(coordinate);
+            switch (flag.get(coordinate)) {
+                case FLAGGED -> flag.setClosedToBoxes(coordinate);
+                case CLOSED -> {
+                    if (getRemainingFlags() != 0){
+                        flag.setFlaggedToBoxes(coordinate);
+                    }
+                }
+            }
         }
     }
 
@@ -46,26 +57,25 @@ public final class Game {
         return gameState == GameState.PLAYING;
     }
 
-    private void openCells (Coordinate coordinate) {
+    private void openBox (Coordinate coordinate) {
         switch (flag.get(coordinate)){
-            case OPENED -> openAdjacentCells(coordinate);
-            case FLAGGED -> {}
+            case OPENED -> openAdjacentBoxes(coordinate);
             case CLOSED -> {
                 switch (bomb.get(coordinate)){
-                    case ZERO -> openCellsAroundZero(coordinate);
+                    case ZERO -> openBoxesAroundZero(coordinate);
                     case BOMB -> processBombHit(coordinate);
-                    default -> flag.setOpendToCells(coordinate);
+                    default -> flag.setOpenToBoxes(coordinate);
                 }
             }
         }
     }
 
-    private void openAdjacentCells(Coordinate coordinate) {
+    private void openAdjacentBoxes(Coordinate coordinate) {
         int numberBox = bomb.get(coordinate).getNumberBox();
         if (numberBox != -1 && numberBox== flag.getFlagCountAround(coordinate)){
             for (Coordinate around: Ranges.getCoordinatesAround(coordinate)){
                 if (Box.CLOSED == flag.get(around)){
-                    openCells(around);
+                    openBox(around);
                 }
             }
         }
@@ -73,26 +83,28 @@ public final class Game {
 
     private void processBombHit(Coordinate coordinate) {
         gameState = GameState.BOMBED;
-        flag.setOpendToCells(coordinate);
+        flag.setOpenToBoxes(coordinate);
         bomb.setCellExplodedBomb(coordinate);
         displayBombs();
     }
 
     private void displayBombs() {
         for (Coordinate coordinate : Ranges.getAllCoordinates()){
-            if (Box.BOMB == bomb.get(coordinate) && Box.CLOSED == flag.get(coordinate)) {
-                flag.setOpendToCells(coordinate);
-                flag.setTotalClosed(flag.getTotalClosed() + 1);
+            if (Box.BOMB == bomb.get(coordinate)) {
+                if (Box.FLAGGED != flag.get(coordinate)){
+                    flag.setOpenToBoxes(coordinate);
+                    flag.setTotalClosed(flag.getTotalClosed() + 1);
+                }
             } else {
-                flag.setCellMisflagged(coordinate);
+                flag.setBoxWrongFlag(coordinate);
             }
         }
     }
 
-    private void openCellsAroundZero(Coordinate coordinate) {
-        flag.setOpendToCells(coordinate);
+    private void openBoxesAroundZero(Coordinate coordinate) {
+        flag.setOpenToBoxes(coordinate);
         for (Coordinate around: Ranges.getCoordinatesAround(coordinate)){
-            openCells(around);
+            openBox(around);
         }
     }
 
@@ -103,18 +115,29 @@ public final class Game {
         }
     }
 
-    public String getMassage() {
-        System.out.println("Game state: " + gameState);
-        return switch (gameState) {
-            case BOMBED -> "You lost!";
-            case WINNER -> "You won!";
-            case PLAYING -> {
-                if (flag.getTotalFlagged() == 0){
-                    yield "Click to start";
-                } else {
-                    yield "Flagged: " + flag.getTotalFlagged() + " of " + bomb.getTotalBombs();
-                }
-            }
+    public void updateButtonIconOnGame(JButton button) {
+        ImageIcon icon = (ImageIcon) switch (gameState){
+            case WINNER -> GameState.WINNER.getImage();
+            case BOMBED -> GameState.BOMBED.getImage();
+            default -> GameState.PLAYING.getImage();
         };
+        button.setPreferredSize(new Dimension(icon.getIconWidth(), icon.getIconHeight()));
+        button.setIcon(icon);
+    }
+
+    public int getRemainingFlags(){
+        return bomb.getTotalBombs() - flag.getTotalFlagged();
+    }
+
+    public void stopTimer(TimerSweeper timerSweeper) {
+        if (gameState != GameState.PLAYING) {
+            timerSweeper.stop();
+        }
+    }
+
+    public void restartTimer(TimerSweeper timerSweeper) {
+        if (gameState == GameState.PLAYING) {
+            timerSweeper.restart();
+        }
     }
 }

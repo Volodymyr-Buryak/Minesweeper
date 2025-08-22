@@ -19,16 +19,5 @@ public final class Matrix {
 
     public void set(Coordinate coordinate, Box box){
         matrix[coordinate.getX()][coordinate.getY()] = box;
-        printInfo();
-    }
-
-    public void printInfo(){
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-        System.out.println('\n');
     }
 }

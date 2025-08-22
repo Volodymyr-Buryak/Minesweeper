@@ -9,12 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Implemented opening of unmarked bombs and incorrect flags">
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Added opening of cells around numbers if the number of flags is equal to the number">
+      <change afterPath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sweeper/util/game/ImageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/bombed.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/detonated.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/inform.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Coordinate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/EnumGame/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/EnumGame/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/EnumGame/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/EnumGame/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Flag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/GameUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -35,6 +45,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.base/java/io/PrintStream.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.desktop/java/awt/Color.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.desktop/java/awt/Image.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.jdks/openjdk-24.0.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
@@ -71,7 +84,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.import",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -142,7 +155,18 @@
       <workItem from="1755021443010" duration="6668000" />
       <workItem from="1755031872358" duration="211000" />
       <workItem from="1755107554831" duration="9000" />
-      <workItem from="1755365109335" duration="3771000" />
+      <workItem from="1755365109335" duration="6232000" />
+      <workItem from="1755374008696" duration="357000" />
+      <workItem from="1755377877374" duration="715000" />
+      <workItem from="1755383204055" duration="6000" />
+      <workItem from="1755443099890" duration="14877000" />
+      <workItem from="1755462922136" duration="171000" />
+      <workItem from="1755463123297" duration="4453000" />
+      <workItem from="1755536819010" duration="9777000" />
+      <workItem from="1755618944898" duration="11720000" />
+      <workItem from="1755637655463" duration="7621000" />
+      <workItem from="1755691569665" duration="8000" />
+      <workItem from="1755877379616" duration="6023000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -296,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755031982040</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added opening of cells around numbers if the number of flags is equal to the number">
+      <option name="closed" value="true" />
+      <created>1755369740850</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1755369740850</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +368,8 @@
     <MESSAGE value="Algorithm for opening empty cells and list of game states" />
     <MESSAGE value="The algorithm for opening cells before victory and blocking mouse clicks has been implemented" />
     <MESSAGE value="Implemented opening of unmarked bombs and incorrect flags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented opening of unmarked bombs and incorrect flags" />
+    <MESSAGE value="Added opening of cells around numbers if the number of flags is equal to the number" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added opening of cells around numbers if the number of flags is equal to the number" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

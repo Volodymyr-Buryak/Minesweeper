@@ -1,10 +1,8 @@
 package sweeper.EnumGame;
 
 public enum Box {
-    // Все що заходиться під сірою плиткою
     ZERO, NUM1, NUM2, NUM3, NUM4, NUM5, NUM6, NUM7, NUM8, BOMB,
-    // Все що заходиться над сірою плиткою
-    OPENED, CLOSED, FLAGGED, BOMBED, NOBOMB;
+    OPENED, CLOSED, FLAGGED, DETONATED, NOBOMB;
 
     private Object image;
 

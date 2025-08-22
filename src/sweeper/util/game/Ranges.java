@@ -1,8 +1,7 @@
 package sweeper.util.game;
 
-import sweeper.Coordinate;
-
 import java.util.Random;
+import sweeper.Coordinate;
 import java.util.ArrayList;
 
 public final class Ranges {

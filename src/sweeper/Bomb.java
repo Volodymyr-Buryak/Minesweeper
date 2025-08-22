@@ -5,7 +5,7 @@ import sweeper.util.game.Ranges;
 
 public final class Bomb {
     private Matrix bombMap;
-    private int totalBombs;
+    private final int totalBombs;
 
     public Bomb(int totalBombs) {
         int maxBomb = Ranges.getSize().getX() * Ranges.getSize().getY();
@@ -49,6 +49,6 @@ public final class Bomb {
     }
 
     public void setCellExplodedBomb(Coordinate bombedCoordinate) {
-        bombMap.set(bombedCoordinate, Box.BOMBED);
+        bombMap.set(bombedCoordinate, Box.DETONATED);
     }
 }
