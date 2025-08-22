@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="115" height="110" alt="Minesweeper Logo" src="https://github.com/user-attachments/assets/3a3f731a-c2de-4bb9-9309-1bcddef60873" />
+  <img width="115" height="110" alt="Minesweeper Logo" src="https://github.com/Volodymyr-Buryak/Minesweeper/blob/main/resources/img/icon.png?raw=true" />
 </p>
 <h3 align="center">‎‎ㅤ‎‎‎Minesweeper</h3>
 
