@@ -82,7 +82,7 @@ public final class GameUI extends JFrame {
         restartButton.setContentAreaFilled(false);
         game.updateButtonIconOnGame(restartButton);
 
-        restartButton.addActionListener(e -> restartGame());
+        restartButton.addActionListener(_ -> restartGame());
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.CENTER;
@@ -122,15 +122,15 @@ public final class GameUI extends JFrame {
                 super.paintComponent(g);
                 for (Coordinate coordinate : Ranges.getAllCoordinates()){
                     g.drawImage((Image) game.getBox(coordinate).getImage(),
-                            coordinate.getX() * IMAGE_SIZE,
-                            coordinate.getY() * IMAGE_SIZE, this);
+                            coordinate.x() * IMAGE_SIZE,
+                            coordinate.y() * IMAGE_SIZE, this);
                 }
             }
         };
         bottomJPanel.addMouseListener(new Mouse(game, bottomJPanel, flagsCount, restartButton, IMAGE_SIZE, timerSweeper));
         bottomJPanel.setPreferredSize(new Dimension(
-                Ranges.getSize().getX() * IMAGE_SIZE,
-                Ranges.getSize().getY() * IMAGE_SIZE));
+                Ranges.getSize().x() * IMAGE_SIZE,
+                Ranges.getSize().y() * IMAGE_SIZE));
         add(bottomJPanel, BorderLayout.CENTER);
     }
 

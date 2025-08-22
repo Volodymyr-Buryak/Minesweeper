@@ -11,8 +11,8 @@ public final class Ranges {
 
     public static void setSize(Coordinate size) {
         Ranges.size = size;
-        for (int x = 0; x < size.getX(); x++) {
-            for (int y = 0; y < size.getY(); y++) {
+        for (int x = 0; x < size.x(); x++) {
+            for (int y = 0; y < size.y(); y++) {
                 allCoordinates.add(new Coordinate(x,y));
             }
         }
@@ -27,20 +27,20 @@ public final class Ranges {
     }
 
     public static Coordinate generateCoordinate() {
-        return new Coordinate(random.nextInt(size.getX()), random.nextInt(size.getY()));
+        return new Coordinate(random.nextInt(size.x()), random.nextInt(size.y()));
     }
 
     private static boolean isRange(Coordinate coordinate) {
-        return (coordinate.getX() >= 0 && coordinate.getX() < size.getX()) &&
-                (coordinate.getY() >= 0 && coordinate.getY() < size.getY());
+        return (coordinate.x() >= 0 && coordinate.x() < size.x()) &&
+                (coordinate.y() >= 0 && coordinate.y() < size.y());
     }
 
     public static ArrayList<Coordinate> getCoordinatesAround (Coordinate coord){
         Coordinate coordinate;
         var list = new ArrayList<Coordinate>();
 
-        for (int x = coord.getX() - 1; x <= coord.getX() + 1; x++){
-            for (int y = coord.getY() - 1; y <= coord.getY() + 1 ; y++) {
+        for (int x = coord.x() - 1; x <= coord.x() + 1; x++){
+            for (int y = coord.y() - 1; y <= coord.y() + 1 ; y++) {
                 coordinate = new Coordinate(x, y);
                 if (!coordinate.equals(coord) && Ranges.isRange(coordinate)){
                     list.add(coordinate);

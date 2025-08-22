@@ -7,17 +7,17 @@ public final class Matrix {
     private final Box[][] matrix;
 
     public Matrix(Box box){
-        matrix = new Box[Ranges.getSize().getX()][Ranges.getSize().getY()];
+        matrix = new Box[Ranges.getSize().x()][Ranges.getSize().y()];
         for (Coordinate allCoordinates : Ranges.getAllCoordinates()){
-            matrix[allCoordinates.getX()][allCoordinates.getY()] = box;
+            matrix[allCoordinates.x()][allCoordinates.y()] = box;
         }
     }
 
     public Box get(Coordinate coordinate) {
-        return matrix[coordinate.getX()][coordinate.getY()];
+        return matrix[coordinate.x()][coordinate.y()];
     }
 
     public void set(Coordinate coordinate, Box box){
-        matrix[coordinate.getX()][coordinate.getY()] = box;
+        matrix[coordinate.x()][coordinate.y()] = box;
     }
 }

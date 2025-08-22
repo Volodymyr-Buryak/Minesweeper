@@ -15,7 +15,7 @@ public final class TimerSweeper {
 
     public TimerSweeper(JLabel timerLabel) {
         this.timeLabel = timerLabel;
-        timer = new Timer(ONE_SECOND_IN_MILLISECONDS, e -> tick());
+        timer = new Timer(ONE_SECOND_IN_MILLISECONDS, _ -> tick());
         updateDisplay();
     }
 

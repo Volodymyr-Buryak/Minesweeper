@@ -11,7 +11,7 @@ public final class Flag {
     public void start() {
         flagMap = new Matrix(Box.CLOSED);
         totalFlagged = 0;
-        totalClosed = Ranges.getSize().getX() * Ranges.getSize().getY();
+        totalClosed = Ranges.getSize().x() * Ranges.getSize().y();
     }
 
     public Box get(Coordinate coordinate){

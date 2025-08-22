@@ -8,7 +8,7 @@ public final class Bomb {
     private final int totalBombs;
 
     public Bomb(int totalBombs) {
-        int maxBomb = Ranges.getSize().getX() * Ranges.getSize().getY();
+        int maxBomb = Ranges.getSize().x() * Ranges.getSize().y();
         if (totalBombs > maxBomb){
             this.totalBombs =  maxBomb / 2;
             return;

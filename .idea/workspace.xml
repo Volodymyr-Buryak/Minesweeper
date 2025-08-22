@@ -9,21 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Added opening of cells around numbers if the number of flags is equal to the number">
-      <change afterPath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sweeper/util/game/ImageHandler.java" afterDir="false" />
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Code after review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/bombed.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/detonated.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/inform.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/EnumGame/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/EnumGame/Box.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/EnumGame/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/EnumGame/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Flag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/GameUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +159,7 @@
       <workItem from="1755618944898" duration="11720000" />
       <workItem from="1755637655463" duration="7621000" />
       <workItem from="1755691569665" duration="8000" />
-      <workItem from="1755877379616" duration="6023000" />
+      <workItem from="1755877379616" duration="7996000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -328,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755369740850</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Code after review">
+      <option name="closed" value="true" />
+      <created>1755883665485</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1755883665485</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,7 +370,8 @@
     <MESSAGE value="The algorithm for opening cells before victory and blocking mouse clicks has been implemented" />
     <MESSAGE value="Implemented opening of unmarked bombs and incorrect flags" />
     <MESSAGE value="Added opening of cells around numbers if the number of flags is equal to the number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added opening of cells around numbers if the number of flags is equal to the number" />
+    <MESSAGE value="Code after review" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code after review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
