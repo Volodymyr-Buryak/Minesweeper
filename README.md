@@ -1,7 +1,7 @@
 <p align="center">
   <img width="115" height="110" alt="Minesweeper Logo" src="https://github.com/Volodymyr-Buryak/Minesweeper/blob/main/resources/img/icon.png?raw=true" />
 </p>
-<h3 align="center">‎‎ㅤ‎‎‎Minesweeper</h3>
+<h3 align="center">‎‎‎‎‎Minesweeper</h3>
 
 ## Description
 
