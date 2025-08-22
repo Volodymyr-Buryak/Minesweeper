@@ -11,13 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Code after review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Flag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Flag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/GameUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/GameUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/TimerSweeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sweeper/util/game/Ranges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +56,7 @@
   "keyToString": {
     "Application.Application.executor": "Run",
     "Application.Main.executor": "Run",
+    "JAR Application.Minesweeper.jar.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -94,6 +89,17 @@
       <recent name="main" />
       <recent name="main.java" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Minesweeper.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Minesweeper_jar/Minesweeper.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Minesweeper.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -159,7 +165,7 @@
       <workItem from="1755618944898" duration="11720000" />
       <workItem from="1755637655463" duration="7621000" />
       <workItem from="1755691569665" duration="8000" />
-      <workItem from="1755877379616" duration="7996000" />
+      <workItem from="1755877379616" duration="10076000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -329,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755883665485</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Code after review">
+      <option name="closed" value="true" />
+      <created>1755885510769</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1755885510769</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
