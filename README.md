@@ -27,13 +27,17 @@ In this version, the board contains **8 mines**. Players can use flags to mark s
   <img src="docs/screenshot3.jpg" width="300" height="355" alt="Screenshot3"/>
 </p>
 
-
-
-
-
-
-
-
+## 💾 Installation
 > [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+>  Make sure you have **OpenJDK 24** installed before running the game.
+
+**Download the JAR file**  
+  - Go to the [Releases](https://github.com/Volodymyr-Buryak/Minesweeper/releases) page and download `Minesweeper.jar`.
+
+**Run the game**  
+- Open a terminal in the folder where `Minesweeper.jar` is located, then run:
+
+```bash
+  java -jar Minesweeper.jar
+
 
