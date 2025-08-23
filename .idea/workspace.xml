@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Code after review">
+    <list default="true" id="4f3ec4b9-9c1b-45ad-a678-91d077b97246" name="Changes" comment="Added icon and updated jar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +166,8 @@
       <workItem from="1755691569665" duration="8000" />
       <workItem from="1755877379616" duration="10866000" />
       <workItem from="1755890157151" duration="545000" />
-      <workItem from="1755899918963" duration="68000" />
+      <workItem from="1755899918963" duration="557000" />
+      <workItem from="1755947908942" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Commit Demo">
       <option name="closed" value="true" />
@@ -353,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755888472292</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added icon and updated jar">
+      <option name="closed" value="true" />
+      <created>1755900122692</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1755900122692</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +403,8 @@
     <MESSAGE value="Implemented opening of unmarked bombs and incorrect flags" />
     <MESSAGE value="Added opening of cells around numbers if the number of flags is equal to the number" />
     <MESSAGE value="Code after review" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code after review" />
+    <MESSAGE value="Added icon and updated jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added icon and updated jar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
